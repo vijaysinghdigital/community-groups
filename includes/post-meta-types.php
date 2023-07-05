@@ -6,6 +6,7 @@ function cg_add_post_meta_types(){
   add_meta_box( 'group_leaders', 'Group Leaders', 'cg_form_meta_box_handler', 'groups' );
 
 }
+
 function cg_form_meta_box_handler($post){
     $leaders = get_posts(['post_type'=>'leader','post_status'=>'publish','posts_per_page'=>-1]);
     $selctedLeaders = get_post_meta($post->ID,'_group_leaders',true);
@@ -16,7 +17,7 @@ function cg_form_meta_box_handler($post){
         <div class="row">
             <div class="col-25"><label>Leaders</label></div>
             <div class="col-75">
-                <select name="_group_leaders[]" class="select" multiple >
+                <select name="_group_leaders[]" class="select cg-muliselect" multiple >
                     <option>Select Leaders</option>
                     <?php if(isset($leaders)){ foreach ($leaders as  $leader) {?>
                     <option value="<?=$leader->ID;?>" <?=(!empty($selctedLeaders) && in_array($leader->ID,$selctedLeaders)) ? 'selected' : ''?>><?=$leader->post_title;?></option>

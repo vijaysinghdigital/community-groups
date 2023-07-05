@@ -24,21 +24,17 @@ function cg_register_post_type(){
             ),
         );
         
-    }
-    // if( 'groups' == get_current_screen()->post_type ) {
-    //     add_action( 'admin_enqueue_scripts', 'cg_load_styles' );
-    //   }
-   
+    }   
 }
 add_action("init","cg_register_post_type");
 
-
 add_action('current_screen','cg_load_styles');
 function cg_load_styles($screen){
-    // echo "<pre>";
-    // print_r($screen);die;
     if($screen->post_type=='groups'){
         wp_enqueue_style('cg-styles', CG_PLUGIN_URL.'assets/css/style.css');
+        wp_enqueue_style('cg-select2', CG_PLUGIN_URL.'assets/css/select2.min.css');
+        wp_enqueue_script('cg-select2', CG_PLUGIN_URL.'assets/js/select2.min.js');
+        wp_enqueue_script('cg-script', CG_PLUGIN_URL.'assets/js/script.js');
     }
 }
 ?>
