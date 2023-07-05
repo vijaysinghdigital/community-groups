@@ -29,7 +29,7 @@ function cg_form_meta_box_handler($post){
     <?php
 }
 
-add_action( 'save_post', 'cg_save_postdata'); 
+add_action( 'save_post_groups', 'cg_save_postdata'); 
 function cg_save_postdata ($post_id){
     if($_SERVER['REQUEST_METHOD']== "POST"){
         $leaders = implode(",",$_POST['_group_leaders']);

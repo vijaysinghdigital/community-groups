@@ -34,8 +34,6 @@ class CommunityGroups{
         require_once CG_PLUGIN_DIR.'/includes/post-meta-types.php';
         require_once CG_PLUGIN_DIR.'/includes/misc-functions.php';
         require_once CG_PLUGIN_DIR.'/includes/action-hooks.php';        
-        // require_once CG_PLUGIN_DIR.'/includes/classes/class-findInSet.php';   
-        require_once CG_PLUGIN_DIR.'/includes/deactivate.php';     
     }
 }
 
